@@ -228,6 +228,7 @@ class FeatureHandler(object):
 
         # Initlaize Global config that loads all database*.json
         if self.is_multi_npu:
+            syslog.syslog(syslog.LOG_NOTICE, "calling initializeGlobalConfig, is_multi_npu {}".format(self.is_multi_npu))
             SonicDBConfig.initializeGlobalConfig()
             namespaces = device_info.get_namespaces()
             for ns in namespaces:
